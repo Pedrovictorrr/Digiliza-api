@@ -27,7 +27,9 @@ Route::middleware('auth:sanctum')->post('/logout', [UserAuthController::class, '
 
 
 Route::middleware(['auth:sanctum'])->group(function () {
-
+  Route::post('/token',function(){
+    return true;
+  });
   Route::get('/getLastReservas', [ReservaController::class, 'GetLasts']);
   Route::delete('/reserva/delete/{id}', [ReservaController::class, 'destroy']);
   Route::post('/showReservasHrs', [ReservaController::class, 'showReservasHrs']);
