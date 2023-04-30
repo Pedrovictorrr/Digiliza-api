@@ -17,16 +17,21 @@ use App\Http\Controllers\ReservaController;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+  return $request->user();
 });
 
-  Route::get('/getLastReservas',[ReservaController::class, 'GetLasts']);
+
 Route::post('/login', [UserAuthController::class, 'login']);
 Route::post('/register', [UserAuthController::class, 'register']);
 Route::middleware('auth:sanctum')->post('/logout', [UserAuthController::class, 'logout']);
+
+
 Route::middleware(['auth:sanctum'])->group(function () {
 
-  
-
-
+  Route::get('/getLastReservas', [ReservaController::class, 'GetLasts']);
+  Route::delete('/reserva/delete/{id}', [ReservaController::class, 'destroy']);
+  Route::post('/showReservasHrs', [ReservaController::class, 'showReservasHrs']);
+  Route::get('/reserva/getAll', [ReservaController::class, 'index']);
+  Route::post('/reserva/store', [ReservaController::class, 'store']);
+  Route::post('/reserva/update/{id}', [ReservaController::class, 'update']);
 });

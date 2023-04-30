@@ -23,7 +23,8 @@ return new class extends Migration
             $table->foreign('User_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('Mesa_id'); 
             $table->foreign('Mesa_id')->references('id')->on('mesas')->onDelete('cascade');
-            $table->integer('status');
+            $table->integer('Status');
+            $table->string('Telefone');
             $table->timestamps();
         });
     }
