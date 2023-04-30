@@ -25,6 +25,11 @@ Route::post('/login', [UserAuthController::class, 'login']);
 Route::post('/register', [UserAuthController::class, 'register']);
 Route::middleware('auth:sanctum')->post('/logout', [UserAuthController::class, 'logout']);
 
+Route::get('/teste', function(){
+  return 'Pedro';
+});
+
+
 
 Route::middleware(['auth:sanctum'])->group(function () {
   Route::post('/token',function(){
