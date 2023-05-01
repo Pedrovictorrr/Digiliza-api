@@ -9,7 +9,7 @@ http://15.229.118.11/
 <br>
 <br>
 <strong>Link para o figma:  </strong>https://www.figma.com/file/qxkpVJY4yt63qeKtOEVjfi/digiliza?type=design&node-id=0-1&t=cFYT2Cla6VbBXia7-0<br><br>
-<strong>Link para back-end Laravel:</strong> https://github.com/Pedrovictorrr/Digiliza-api
+<strong>Link para front-end em React:</strong> [https://github.com/Pedrovictorrr/Digiliza-api](https://github.com/Pedrovictorrr/Digiliza-Client)
 
 <br>
 
@@ -19,18 +19,22 @@ Passo a passo:<br>
 
 Clonar o repositorio do React Nextjs para sua maquina:
 ```bash
-git clone https://github.com/Pedrovictorrr/Digiliza-Client.git
+git clone https://github.com/Pedrovictorrr/Digiliza-api.git
 ```
 Entrar na pasta raiz do projeto:
 ```bash
-cd /Digiliza-Client
+cd /Digiliza-api
 ```
 
 Installar dependencia e iniciar o ambiente de dev:
 
 ```bash
-npm install
-npm run dev
+composer install
+cp .env.example .env
+php artisan migrate
+php artisan db:seed
+php artisan key:generate
+php artisan serve
 ```
 <strong>Print do diagrama do banco de dados que elaborei:</strong><br>
 ![image](https://user-images.githubusercontent.com/82172897/235407938-9e209c4e-32fe-42aa-bcd9-9f40203f230d.png)<br>
