@@ -63,7 +63,7 @@ class ReservaController extends Controller
     
         $mesa = $this->verifyMesa($request);
     
-        $reserva->QTD_Pessoas = $request->input('QTDPessoas');
+        $reserva->QTD_Pessoas = $request->input('QTD_Pessoas');
         $reserva->Data = $request->input('Data');
         $reserva->Name = $request->input('Nome') ." ". $request->input('Sobrenome');
         $reserva->Email = $request->input('Email');
